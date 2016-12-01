@@ -1,1 +1,59 @@
-<h1>Hello Word Mines world!</h1>
+﻿<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+ <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Word Mines</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <script src="js/navigo.min.js"></script>
+        <script>
+            var router = new Navigo(root = null, useHash = false);
+
+            router
+              .on('/about', function () {
+                  // display all the products
+                  console.log("works");
+                  var div = document.getElementById('view');
+                  div.innerHTML = "<div class=\"pure-g\"><div class=\"pure-u-1-1 jumbotron\"><h1>Word Mines</h1><h3>The game where you watch your ****ing mouth</h3></div></div>";
+              })
+              .resolve();
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="pure-menu pure-menu-horizontal">
+            <!--<a href="#" class="pure-menu-heading pure-menu-link">BRAND</a>-->
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#/about" class="pure-menu-link">About</a></li>
+                <li class="pure-menu-item"><a href="/purchase" class="pure-menu-link">Buy</a></li>
+                <li class="pure-menu-item"><a href="/contact" class="pure-menu-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <div id="view"></div>
+
+        <!--<div class="pure-g">
+            <div class="pure-u-1-1 jumbotron">
+                <h1>Word Mines</h1>
+                <h3>The game where you watch your ****ing mouth</h3>
+            </div>
+        </div>-->
+
+
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+
+        <!-- Google Analytics -->
+       
+    </body>
+</html>
