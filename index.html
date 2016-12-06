@@ -15,18 +15,6 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <script src="js/navigo.min.js"></script>
-        <script>
-            var router = new Navigo(root = null, useHash = false);
-
-            router
-              .on('/about', function () {
-                  // display all the products
-                  console.log("works");
-                  var div = document.getElementById('view');
-                  div.innerHTML = "<div class=\"pure-g\"><div class=\"pure-u-1-1 jumbotron\"><h1>Word Mines</h1><h3>The game where you watch your ****ing mouth</h3></div></div>";
-              })
-              .resolve();
-        </script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -40,16 +28,12 @@
                 <li class="pure-menu-item"><a href="/contact" class="pure-menu-link">Contact</a></li>
             </ul>
         </div>
-
-        <div id="view"></div>
-
-        <!--<div class="pure-g">
+        <div class="pure-g">
             <div class="pure-u-1-1 jumbotron">
                 <h1>Word Mines</h1>
                 <h3>The game where you watch your ****ing mouth</h3>
             </div>
-        </div>-->
-
+        </div>
 
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 

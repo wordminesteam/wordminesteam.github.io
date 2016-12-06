@@ -1,11 +1,21 @@
-﻿body {
+﻿@font-face {
+  font-family: 'LemonMilk';
+  src: url('fonts/LemonMilk.otf') format('otf');
 }
 
+body {
+}
+
+h1, h2, h3 {
+    font-family: LemonMilk;
+}
 .pure-menu-item {
     text-transform: uppercase;
+    font-family: LemonMilk;
 }
 
 .jumbotron {
+    font-family: LemonMilk;
     text-align: center;
     text-transform: uppercase;
 }
