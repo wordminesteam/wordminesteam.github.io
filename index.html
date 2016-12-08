@@ -31,13 +31,47 @@
         <div class="pure-g">
             <div class="pure-u-1-1 jumbotron">
                 <h1>Word Mines</h1>
-                <h3>The game where you watch your ****ing mouth</h3>
+                <h3>The game where you watch your fucking mouth</h3>
+                <form class="pure-form">
+                    <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion">
+                    <button class="pure-button" id="suggestionSubmitButton">Submit</button>
+                </form>
             </div>
         </div>
 
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 
         <!-- Google Analytics -->
-       
+        <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous">
+        </script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDxW5typcN8ueST6XN2bG7xoy4hR_Q8JsM",
+            authDomain: "word-mines.firebaseapp.com",
+            databaseURL: "https://word-mines.firebaseio.com",
+            storageBucket: "word-mines.appspot.com",
+            messagingSenderId: "539172743064"
+        };
+        firebase.initializeApp(config);
+
+       /* firebase.database().ref('users/go').set({
+            username: 'works',
+            email: 'email'
+        });*/
+
+        var button = document.getElementById("suggestionSubmitButton");
+        var value =  button.form.suggestion.value;
+        button.onclick = function() {
+            firebase.database().ref('suggestions').set({
+                name: "test"
+            })
+            event.preventDefault();
+        }
+        </script>
     </body>
 </html>
