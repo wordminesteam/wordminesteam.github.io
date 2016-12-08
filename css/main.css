@@ -39,9 +39,10 @@ h1, h2, h3, h4 {
 
 .bomb-image input {
     text-align: center;
+    font-family: LemonMilk;
 }
 
-.text {
+.suggestion-box {
     left: 0;
     position:absolute;
     text-align:center;
@@ -49,9 +50,10 @@ h1, h2, h3, h4 {
     width: 100%
 }
 
-.text button {
+.suggestion-box button {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    font-family: LemonMilk;
 }

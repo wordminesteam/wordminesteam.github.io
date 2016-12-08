@@ -15,6 +15,18 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <script src="js/navigo.min.js"></script>
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            #mc_embed_signup {
+                background: #fff;
+                clear: left;
+                font: 14px Helvetica,Arial,sans-serif;
+                width: 100%;
+            }
+            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -34,23 +46,38 @@
                 <h3>The game where you watch your fucking mouth</h3>
                 <div class="bomb-image">
                     <img src="css/img/Bomb.png"/>
-                    <div class="text">
-                    <h3>Suggest a word:<h3>
-                    <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion" id="suggestionInput">
-                    <button class="pure-button" id="suggestionSubmitButton" onclick="addSuggestion()">Submit</button>
+                    <div class="suggestion-box">
+                        <h3>Suggest a word:</h3>
+                        <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion" id="suggestionInput">
+                        <button class="pure-button" id="suggestionSubmitButton" onclick="addSuggestion()">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+        <!-- Begin MailChimp Signup Form -->
+      
+        <div id="mc_embed_signup">
+            <form action="//alex-pojman.us14.list-manage.com/subscribe/post?u=ea7bab0420387fce6b21a5541&amp;id=a5d54b0901" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    <label for="mce-EMAIL">Subscribe to our mailing list</label>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ea7bab0420387fce6b21a5541_a5d54b0901" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+  
 
         <!-- Google Analytics -->
         <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
         <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous">
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
         </script>
         <script>
         // Initialize Firebase
@@ -65,20 +92,24 @@
 
         var database = firebase.database();
 
+        $('#suggestionInput').keypress(function (e) {
+            if (e.keyCode == 13)
+                $('#suggestionSubmitButton').click();
+        });
+
         function addSuggestion() {
-            var suggestion = document.getElementById("suggestionInput").value;
+            var suggestionName = document.getElementById("suggestionInput").value;
 
-            foo = {}; 
-            foo[suggestion] = true; 
+            suggestionObject = {}; 
+            suggestionObject[suggestionName] = true; 
             
-
-            database.ref('suggestions').update(foo)
+            database.ref('suggestions').update(suggestionObject)
             .then(function (userData) {
                 document.getElementById("suggestionInput").value = "";
             })
             .catch(function(error) {
                 // handle error
-            });;
+            });
 
         }
         </script>
