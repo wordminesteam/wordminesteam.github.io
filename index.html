@@ -32,16 +32,9 @@
             <div class="pure-u-1-1 jumbotron">
                 <h1>Word Mines</h1>
                 <h3>The game where you watch your fucking mouth</h3>
-<<<<<<< HEAD
                 <h4>Suggest a word:<h4>
                 <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion" id="suggestionInput">
                 <button class="pure-button" id="suggestionSubmitButton" onclick="addSuggestion()">Submit</button>
-=======
-                <form class="pure-form">
-                    <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion">
-                    <button class="pure-button" id="suggestionSubmitButton">Submit</button>
-                </form>
->>>>>>> origin/master
             </div>
         </div>
 
@@ -65,7 +58,6 @@
         };
         firebase.initializeApp(config);
 
-<<<<<<< HEAD
         var database = firebase.database();
 
         function addSuggestion() {
@@ -73,20 +65,6 @@
             database.ref('suggestions/' + suggestion).set({
                 name: suggestion
             });
-=======
-       /* firebase.database().ref('users/go').set({
-            username: 'works',
-            email: 'email'
-        });*/
-
-        var button = document.getElementById("suggestionSubmitButton");
-        var value =  button.form.suggestion.value;
-        button.onclick = function() {
-            firebase.database().ref('suggestions').set({
-                name: "test"
-            })
-            event.preventDefault();
->>>>>>> origin/master
         }
         </script>
     </body>
