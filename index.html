@@ -30,11 +30,16 @@
         </div>
         <div class="pure-g">
             <div class="pure-u-1-1 jumbotron">
-                <h1>Word Mines</h1>
+                <img src="css/img/Logo-Text.png"/>
                 <h3>The game where you watch your fucking mouth</h3>
-                <h4>Suggest a word:<h4>
-                <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion" id="suggestionInput">
-                <button class="pure-button" id="suggestionSubmitButton" onclick="addSuggestion()">Submit</button>
+                <div class="bomb-image">
+                    <img src="css/img/Bomb.png"/>
+                    <div class="text">
+                    <h3>Suggest a word:<h3>
+                    <input type="text" class="pure-input-rounded" placeholder="Your Suggestion" name="suggestion" id="suggestionInput">
+                    <button class="pure-button" id="suggestionSubmitButton" onclick="addSuggestion()">Submit</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -62,9 +67,19 @@
 
         function addSuggestion() {
             var suggestion = document.getElementById("suggestionInput").value;
-            database.ref('suggestions/' + suggestion).set({
-                name: suggestion
-            });
+
+            foo = {}; 
+            foo[suggestion] = true; 
+            
+
+            database.ref('suggestions').update(foo)
+            .then(function (userData) {
+                document.getElementById("suggestionInput").value = "";
+            })
+            .catch(function(error) {
+                // handle error
+            });;
+
         }
         </script>
     </body>

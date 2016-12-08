@@ -10,6 +10,11 @@
   font-style: normal;
 }
 
+img {
+    width: 60%;
+    height: auto;
+}
+
 body {
 }
 
@@ -27,4 +32,26 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
 }
 
-    
+.bomb-image {
+    position: relative;
+}
+
+
+.bomb-image input {
+    text-align: center;
+}
+
+.text {
+    left: 0;
+    position:absolute;
+    text-align:center;
+    top: 40%;
+    width: 100%
+}
+
+.text button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
